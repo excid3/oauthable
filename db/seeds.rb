@@ -212,14 +212,13 @@ providers = [
   ["yammer", "Yammer", "https://github.com/le0pard/omniauth-yammer"],
   #["yubikey", "Yubikey", "https://github.com/steveh/omniauth-yubikey"],
   #["yandex", "Yandex", "https://github.com/evrone/omniauth-yandex"],
-  ["youtube", "YouTube", "https://github.com/jamiew/omniauth-youtube"],
+  #["youtube", "YouTube", "https://github.com/jamiew/omniauth-youtube"],
+  ["google_oauth2", "YouTube", "https://github.com/zquestz/omniauth-google-oauth2"],
   ["webmoney", "WebMoney", "https://github.com/skyeagle/oa-webmoney"],
   #["wepay", "WePay", "https://github.com/tenaciousflea/omniauth-wepay"],
   ["zendesk", "Zendesk", "https://github.com/tstachl/omniauth-zendesk"],
   #["zenpayroll", "zenpayroll", "https://github.com/shiftdock/omniauth-zenpayroll"],
 ]
-
-Provider.delete_all
 
 providers.each do |omniauth_name, name, github|
   Provider.where(

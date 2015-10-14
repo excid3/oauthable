@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :provider_id, "Provider" %><br>
-    <%= f.select :provider_id, options_for_select(Provider.pluck(:name, :id, :omniauth_name).map { |name, id, omniauth| [name, id, {"data-omniauth": omniauth}] }), {}, {class: "select2 form-control"} %>
+    <%= f.select :provider_id, options_for_select(Provider.pluck(:name, :id, :omniauth_name).map { |name, id, omniauth| [name, id, {"data-omniauth": omniauth}] }, selected: f.object.provider_id), {}, {class: "select2 form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :api_key, "API Key / Consumer Key / Client ID" %>
