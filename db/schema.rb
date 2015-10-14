@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20151014014142) do
     t.integer  "provider_id", null: false
     t.string   "api_key"
     t.string   "api_secret"
+    t.string   "scope"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

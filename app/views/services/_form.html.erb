@@ -24,6 +24,10 @@
     <%= f.text_field :api_secret, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :scope, "Scope" %>
+    <%= f.text_field :scope, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <label>Set your <strong>Redirect URL</strong> to the following:</p>
     <p class="form-control-static"><%= root_url %>auth/<span data-behavior='provider'></span>/callback</p>
   </div>

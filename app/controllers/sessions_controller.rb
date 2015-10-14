@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
       request.env['omniauth.strategy'].options[:client_secret] = @service.api_secret
     end
 
+    request.env['omniauth.strategy'].options[:scope] = @service.scope
+
     render :text => "Omniauth setup phase.", :status => 404
   end
 

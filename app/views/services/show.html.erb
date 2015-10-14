@@ -21,6 +21,11 @@
   <%= @service.api_secret %>
 </p>
 
+<p>
+  <strong>Scope:</strong>
+  <%= @service.scope %>
+</p>
+
 <h2><%= pluralize @service.tokens.length, "Token" %></h2>
 <% @service.tokens.each do |token| %>
   <%= div_for token do %>

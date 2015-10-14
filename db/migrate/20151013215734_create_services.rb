@@ -5,6 +5,7 @@ class CreateServices < ActiveRecord::Migration
       t.integer :provider_id, null: false
       t.string :api_key
       t.string :api_secret
+      t.string :scope
 
       t.timestamps null: false
     end
