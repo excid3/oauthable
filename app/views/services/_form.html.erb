@@ -1,0 +1,34 @@
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :provider_id, "Provider" %><br>
+    <%= f.select :provider_id, options_for_select(Provider.pluck(:name, :id, :omniauth_name).map { |name, id, omniauth| [name, id, {"data-omniauth": omniauth}] }), {}, {class: "select2 form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :api_key, "API Key / Consumer Key / Client ID" %>
+    <%= f.text_field :api_key, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :api_secret, "API Secret / Consumer Secret / Client Secret" %>
+    <%= f.text_field :api_secret, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Set your <strong>Redirect URL</strong> to the following:</p>
+    <p class="form-control-static"><%= root_url %>auth/<span data-behavior='provider'></span>/callback</p>
+  </div>
+  <div class="form-group">
+    <%= f.button "Save", class: "btn btn-primary", data: {disable_with: "Saving..."} %>
+    <%= link_to "Cancel", :back %>
+  </div>
+<% end %>

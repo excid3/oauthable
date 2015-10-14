@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  omniauth_name: MyString
+  github: MyString
+  instructions: MyText
+
+two:
+  name: MyString
+  omniauth_name: MyString
+  github: MyString
+  instructions: MyText

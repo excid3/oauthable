@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-2">
+    <img src="https://logo.clearbit.com/<%= @service.provider.name %>">
+  </div>
+  <div class="com-sm-10">
+  </div>
+</div>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @service.provider %>
+</p>
+
+<p>
+  <strong>API Key:</strong>
+  <%= @service.api_key %>
+</p>
+
+<p>
+  <strong>API Secret:</strong>
+  <%= @service.api_secret %>
+</p>
+
+<h2><%= pluralize @service.tokens.length, "Token" %></h2>
+<% @service.tokens.each do |token| %>
+  <%= div_for token do %>
+    <%= token.credentials %>
+  <% end %>
+<% end %>
+
+<%= link_to "Get Access Token", go_service_path(@service) %> |
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
