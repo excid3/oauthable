@@ -16,6 +16,7 @@
   <tbody>
     <% @providers.each do |provider| %>
       <tr>
+        <td><img src="http://logo.clearbit.com/<%= provider.domain %>" /></td>
         <td><%= provider.name %></td>
         <td><%= provider.omniauth_name %></td>
         <td><%= provider.github %></td>

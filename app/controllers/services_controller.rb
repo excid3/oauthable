@@ -1,16 +1,18 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_project
   before_action :set_service, only: [:show, :edit, :update, :destroy, :go]
 
   # GET /services
   # GET /services.json
   def index
-    @services = Service.includes(:provider)
+    @services = @project.services.includes(:provider)
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
+    @tokens = @service.tokens.order(created_at: :desc)
   end
 
   # GET /services/new
@@ -25,11 +27,11 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service = current_user.services.new(service_params)
+    @service = @project.services.new(service_params)
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
+        format.html { redirect_to [@project, @service], notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        format.html { redirect_to [@project, @service], notice: 'Service was successfully updated.' }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit }
@@ -57,7 +59,7 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     respond_to do |format|
-      format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
+      format.html { redirect_to project_services_url(@project), notice: 'Service was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,8 +71,12 @@ class ServicesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_project
+      @project = current_user.projects.friendly.find(params[:project_id])
+    end
+
     def set_service
-      @service = current_user.services.find(params[:id])
+      @service = @project.services.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

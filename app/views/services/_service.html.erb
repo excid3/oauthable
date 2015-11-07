@@ -1,0 +1,6 @@
+<%= div_for service do %>
+  <%= link_to project_service_path(@project, service) do %>
+    <img src="https://logo.clearbit.com/<%= service.provider.domain %>" class="img-rounded">
+    <%= service.provider.name %>
+  <% end %>
+<% end %>

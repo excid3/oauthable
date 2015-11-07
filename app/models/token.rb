@@ -5,4 +5,8 @@ class Token < ActiveRecord::Base
   def credentials
     auth["credentials"]
   end
+
+  def token_and_secret
+    credentials.slice("token", "secret")
+  end
 end

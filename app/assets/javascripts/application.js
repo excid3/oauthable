@@ -17,4 +17,5 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require select2
+//= require clipboard
 //= require_tree .
