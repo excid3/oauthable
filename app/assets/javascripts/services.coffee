@@ -1,16 +1,6 @@
-targetBlankRenderer = new (marked.Renderer)
-targetBlankRenderer.link = (href, title, text) ->
-  external = undefined
-  newWindow = undefined
-  out = undefined
-  external = /^https?:\/\/.+$/.test(href)
-  newWindow = external or title == 'newWindow'
-  out = '<a href="' + href + '"'
-  if newWindow
-    out += ' target="_blank"'
-  if title and title != 'newWindow'
-    out += ' title="' + title + '"'
-  out += '>' + text + '</a>'
+converter = new showdown.Converter
+  simplifiedAutoLink: true
+  extensions: ['targetblank']
 
 class ServiceForm
   constructor: ->
@@ -35,13 +25,13 @@ class ServiceForm
       field.val(url)
 
       $(".service-fields").show()
-      #$(".instructions").html(marked(selected.data("instructions")))
+      console.log converter.makeHtml(selected.data("instructions"))
+      $(".instructions").html converter.makeHtml(selected.data("instructions"))
 
   providerTemplate: (provider) ->
     return provider.text if (!provider.id)
     $("<span><img src='https://logo.clearbit.com/#{$(provider.element).data("domain")}' class='img-rounded service-logo-sm' /> #{provider.text}</span>")
 
 jQuery ->
-  marked.setOptions({gfm: true, renderer: targetBlankRenderer})
   new ServiceForm
 

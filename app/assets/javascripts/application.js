@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require select2
 //= require clipboard
+//= require showdown-target-blank
 //= require_tree .

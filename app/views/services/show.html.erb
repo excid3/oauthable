@@ -110,7 +110,7 @@
         <p>Add this to the <code>config/initializers/omniauth.rb</code> file:</p>
 
         <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-code"><%= fa_icon "clipboard" %></button>
-        <pre><code id="omniauth-code">use OmniAuth::Builder do
+        <pre class="lang-ruby"><code id="omniauth-code">use OmniAuth::Builder do
   provider :<%= @service.provider.omniauth_name %>, Rails.application.secrets.<%= @service.provider.omniauth_name %>_key, Rails.application.secrets.<%= @service.provider.omniauth_name %>_secret, scope: "<%= @service.scope %>"
 end</code></pre>
       </div>

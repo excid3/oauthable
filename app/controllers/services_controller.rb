@@ -31,7 +31,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to [@project, @service], notice: 'Service was successfully created.' }
+        format.html { redirect_to [@project, @service] }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -70,9 +70,11 @@ class ServicesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = current_user.projects.friendly.find(params[:project_id])
+      @services = @project.services.includes(:provider)
     end
 
     def set_service
