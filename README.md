@@ -59,7 +59,7 @@ Gumroad | No | No
 Harvest | No | No
 Heroku | No | No
 Imgur | No | No
-Instagram | *Yes* | No
+Instagram | **Yes** | No
 Instapaper | No | No
 Jawbone | No | No
 JIRA | No | No
@@ -77,12 +77,12 @@ Rdio OAuth2 | No | No
 Shopify | No | No
 SoundCloud | No | No
 Spotify | No | No
-Stripe Connect | *Yes* | No
+Stripe Connect | **Yes** | No
 Steam | No | No
 Trello | No | No
 Tumblr | No | No
 Twitch.TV | No | No
-Twitter | *Yes* | No
+Twitter | **Yes** | No
 Uber | No | No
 Venmo | No | No
 Vimeo | No | No
