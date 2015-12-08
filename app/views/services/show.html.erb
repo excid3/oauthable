@@ -28,6 +28,27 @@
             <div class="card card-block">
               <%= link_to "Delete", project_service_token_path(@project, @service, token), method: :delete, class: "btn btn-danger btn-sm delete-link", data: {confirm: "Are you sure you want to delete this?" } %>
 
+              <% if token.uid.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">User ID</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.uid %>">
+                </div>
+              <% end %>
+
+              <% if token.nickname.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.nickname %>">
+                </div>
+              <% end %>
+
+              <% if token.name.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">Name</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.name %>">
+                </div>
+              <% end %>
+
               <div class="input-group input-group-sm">
                 <span class="input-group-addon">Scope</span>
                 <input type="text" class="form-control" name="scope" value="<%= token.scope %>">
@@ -88,6 +109,12 @@
       </div>
 
       <div role="tabpanel" class="tab-pane" id="devise">
+        <p>If you're using Devise, you can use the following example code to let your users login or connect their account with <%= @service.provider.name %>.</p>
+
+        <p>Add this to the <code>Gemfile</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#devise-gemfile"><%= fa_icon "clipboard" %></button>
+        <pre><code id="devise-gemfile">gem '<%= @service.provider.gem_name %>'</code></pre>
+
         <p>Add this to the <code>config/secrets.yml</code> file:</p>
         <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#devise-secrets"><%= fa_icon "clipboard" %></button>
         <pre><code id="devise-secrets"><%= @service.project.environment %>:
@@ -101,6 +128,11 @@
       </div>
 
       <div role="tabpanel" class="tab-pane" id="omniauth">
+        <p>If you're using Omniauth, you can use the following example code to let your users login or connect their account with <%= @service.provider.name %>.</p>
+        <p>Add this to the <code>Gemfile</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-gemfile"><%= fa_icon "clipboard" %></button>
+        <pre><code id="omniauth-gemfile">gem '<%= @service.provider.gem_name %>'</code></pre>
+
         <p>Add this to the <code>config/secrets.yml</code> file:</p>
         <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-secrets"><%= fa_icon "clipboard" %></button>
         <pre><code id="omniauth-secrets"><%= @service.project.environment %>:

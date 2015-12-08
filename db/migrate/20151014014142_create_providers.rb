@@ -3,6 +3,7 @@ class CreateProviders < ActiveRecord::Migration
     create_table :providers do |t|
       t.string :name
       t.string :omniauth_name
+      t.string :gem_name
       t.string :github
       t.text :instructions
 

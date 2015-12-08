@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151017234832) do
   create_table "providers", force: :cascade do |t|
     t.string   "name"
     t.string   "omniauth_name"
+    t.string   "gem_name"
     t.string   "github"
     t.text     "instructions"
     t.datetime "created_at",    null: false
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20151017234832) do
     t.string   "api_key"
     t.string   "api_secret"
     t.string   "scope"
+    t.text     "auth"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "options"

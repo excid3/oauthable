@@ -3,8 +3,9 @@ class TokensController < ApplicationController
   before_action :set_token
 
   def destroy
+    @service = @token.service
     @token.destroy
-    redirect_to @service
+    redirect_to project_service_path(@service.project, @service)
   end
 
   private
