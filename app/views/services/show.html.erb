@@ -1,0 +1,152 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <img src="https://logo.clearbit.com/<%= @service.provider.domain %>" class="img-rounded service-logo">
+    <h1><%= @service.provider.name %></h1>
+    <p><%= link_to 'Edit', edit_project_service_path(@project, @service), class: "btn btn-secondary btn-sm" %></p>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" href="#access-tokens" role="tab" data-toggle="tab">Access Tokens</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#config" role="tab" data-toggle="tab">Config</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#devise" role="tab" data-toggle="tab">Devise</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#omniauth" role="tab" data-toggle="tab">Omniauth</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="access-tokens">
+        <p><%= link_to "Get A New Access Token", go_project_service_path(@project, @service), class: "btn btn-secondary btn-block", data: {disable_with: "Redirecting..."} %></p>
+
+        <% @tokens.each do |token| %>
+          <%= div_for token do %>
+            <div class="card card-block">
+              <%= link_to "Delete", project_service_token_path(@project, @service, token), method: :delete, class: "btn btn-danger btn-sm delete-link", data: {confirm: "Are you sure you want to delete this?" } %>
+
+              <% if token.uid.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">User ID</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.uid %>">
+                </div>
+              <% end %>
+
+              <% if token.nickname.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">Nickname</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.nickname %>">
+                </div>
+              <% end %>
+
+              <% if token.name.present? %>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">Name</span>
+                  <input type="text" class="form-control" name="scope" value="<%= token.name %>">
+                </div>
+              <% end %>
+
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">Scope</span>
+                <input type="text" class="form-control" name="scope" value="<%= token.scope %>">
+              </div>
+
+              <% token.token_and_secret.each do |key, value| %>
+                <br />
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"><%= key %></span>
+                  <input type="text" class="form-control" name="<%= key %>" value="<%= value %>">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary btn-copy" data-clipboard-text="<%= value %>" data-placement="bottom" data-trigger="manual" title="Copied!"><%= fa_icon "clipboard" %></button>
+                  </span>
+                </div>
+              <% end %>
+
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="config">
+        <div>
+          <label>
+            <small>API Token</small>
+            <div class="input-group input-group-sm">
+              <input readonly type="text" class="form-control" value="<%= @service.api_key %>">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary btn-copy" data-clipboard-text="<%= @service.api_key %>" data-placement="bottom" data-trigger="manual" title="Copied!"><%= fa_icon "clipboard" %></button>
+              </span>
+            </div>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <small>API Secret</small>
+            <div class="input-group input-group-sm">
+              <input readonly type="text" class="form-control" value="<%= @service.api_secret %>">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary btn-copy" data-clipboard-text="<%= @service.api_secret %>" data-placement="bottom" data-trigger="manual" title="Copied!"><%= fa_icon "clipboard" %></button>
+              </span>
+            </div>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <small>Scope</small>
+            <div class="input-group input-group-sm">
+              <input readonly type="text" class="form-control" value="<%= @service.scope %>">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary btn-copy" data-clipboard-text="<%= @service.scope %>" data-placement="bottom" data-trigger="manual" title="Copied!"><%= fa_icon "clipboard" %></button>
+              </span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="devise">
+        <p>If you're using Devise, you can use the following example code to let your users login or connect their account with <%= @service.provider.name %>.</p>
+
+        <p>Add this to the <code>Gemfile</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#devise-gemfile"><%= fa_icon "clipboard" %></button>
+        <pre><code id="devise-gemfile">gem '<%= @service.provider.gem_name %>'</code></pre>
+
+        <p>Add this to the <code>config/secrets.yml</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#devise-secrets"><%= fa_icon "clipboard" %></button>
+        <pre><code id="devise-secrets"><%= @service.project.environment %>:
+  <%= @service.provider.omniauth_name %>_key: <%= @service.api_key %>
+  <%= @service.provider.omniauth_name %>_secret: <%= @service.api_secret %></code></pre>
+
+        <p>Add this to the <code>config/initializers/devise.rb</code> file:</p>
+
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#devise-code"><%= fa_icon "clipboard" %></button>
+        <pre><code id="devise-code">config.omniauth :<%= @service.provider.omniauth_name %>, Rails.application.secrets.<%= @service.provider.omniauth_name %>_key, Rails.application.secrets.<%= @service.provider.omniauth_name %>_secret, scope: "<%= @service.scope %>"</code></pre>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="omniauth">
+        <p>If you're using Omniauth, you can use the following example code to let your users login or connect their account with <%= @service.provider.name %>.</p>
+        <p>Add this to the <code>Gemfile</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-gemfile"><%= fa_icon "clipboard" %></button>
+        <pre><code id="omniauth-gemfile">gem '<%= @service.provider.gem_name %>'</code></pre>
+
+        <p>Add this to the <code>config/secrets.yml</code> file:</p>
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-secrets"><%= fa_icon "clipboard" %></button>
+        <pre><code id="omniauth-secrets"><%= @service.project.environment %>:
+  <%= @service.provider.omniauth_name %>_key: <%= @service.api_key %>
+  <%= @service.provider.omniauth_name %>_secret: <%= @service.api_secret %></code></pre>
+
+        <p>Add this to the <code>config/initializers/omniauth.rb</code> file:</p>
+
+        <button class="btn btn-secondary btn-copy pull-right" data-placement="left" data-trigger="manual" title="Copied!" data-clipboard-target="#omniauth-code"><%= fa_icon "clipboard" %></button>
+        <pre class="lang-ruby"><code id="omniauth-code">use OmniAuth::Builder do
+  provider :<%= @service.provider.omniauth_name %>, Rails.application.secrets.<%= @service.provider.omniauth_name %>_key, Rails.application.secrets.<%= @service.provider.omniauth_name %>_secret, scope: "<%= @service.scope %>"
+end</code></pre>
+      </div>
+    </div>
+  </div>
+
+</div>

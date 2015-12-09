@@ -1,0 +1,62 @@
+<%= form_for([@project, @service]) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :provider_id, "What service do you want to connect to #{@project.name}?" %><br>
+    <%= f.select :provider_id, options_for_select(Provider.all.map{ |provider|
+      [provider.name, provider.id, {
+        "data-omniauth": provider.omniauth_name,
+        "data-domain": provider.domain,
+        "data-instructions": provider.instructions}]
+      }, selected: f.object.provider_id), {include_blank: true}, {class: "form-control", autofocus: @service.new_record?}
+    %>
+  </div>
+
+  <div <% if @service.new_record? %>class="service-fields" style="display:none;"<% end %>>
+    <hr />
+
+    <div class="form-group">
+      <label>Set your app's <strong>Redirect URL</strong> to the following:</p>
+      <div class="input-group input-group-sm">
+        <input readonly type="text" id="redirect-url" class="form-control" value="" data-behavior="provider" data-root-url="<%= root_url %>">
+        <span class="input-group-btn">
+          <a class="btn btn-secondary btn-copy" data-clipboard-target="#redirect-url" data-placement="bottom" data-trigger="manual" title="Copied!"><%= fa_icon "clipboard" %></a>
+        </span>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+      <%= f.label :api_key, "Your app's API Key / Consumer Key / Client ID" %>:
+      <%= f.text_field :api_key, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :api_secret, "Your app's API Secret / Consumer Secret / Client Secret" %>:
+      <%= f.text_field :api_secret, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :scope, "Request scope / permissions from your users" %>:
+      <%= f.text_field :scope, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <% if @service.persisted? %>
+          <%= link_to "Delete", project_service_path(@project, @service), class: "text-danger", method: :delete, data: {confirm: "Are you sure you want to delete this service?"} %>
+      <% end %>
+        <div class="pull-right">
+      <%= f.button "Save", class: "btn btn-primary", data: {disable_with: "Saving..."} %>
+      <%= link_to "Cancel", :back %>
+        </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,597 @@
+GIT
+  remote: git://github.com/excid3/omniauth-bitly.git
+  revision: 5e39279b3d0f60da9c99a04b6adbb7434f42c931
+  specs:
+    omniauth-bitly (0.0.7)
+      multi_json (~> 1.3)
+      omniauth-oauth2 (~> 1.3)
+
+GIT
+  remote: git://github.com/excid3/omniauth-dribbble.git
+  revision: 6ffbc05da3305ed298a21ee4f3507377e88a1713
+  branch: patch-1
+  specs:
+    omniauth-dribbble (0.0.1)
+      omniauth (>= 1.0)
+      omniauth-oauth2 (>= 1.1)
+
+GIT
+  remote: git://github.com/excid3/omniauth-harvest.git
+  revision: ac1227c49cd68d578c5ae8e491981dfb41eb9df1
+  specs:
+    omniauth-harvest (0.1.1)
+      omniauth-oauth2 (~> 1.3)
+
+GIT
+  remote: git://github.com/excid3/omniauth-paypal.git
+  revision: 6ad84653be61871133577a12907e7d0ff15b7ae2
+  specs:
+    omniauth-paypal (1.3)
+      omniauth-oauth2 (~> 1.3)
+
+GIT
+  remote: git://github.com/lukaszkorecki/omniauth-producthunt.git
+  revision: c5d09eb960f15236ad5bdd3e0caea301e7a67def
+  specs:
+    omniauth-producthunt (0.0.1)
+      omniauth-oauth2
+
+GIT
+  remote: git://github.com/moomerman/omniauth-soundcloud.git
+  revision: fbaf621d563e6431e9290d6337a6a33a74d84a52
+  specs:
+    omniauth-soundcloud (1.0.1)
+      omniauth-oauth2 (>= 1.1.0)
+
+GIT
+  remote: https://github.com/twbs/bootstrap-rubygem
+  revision: c00bd6966ae0e74c7ba16f4e2450a2a7b0289694
+  specs:
+    bootstrap (4.0.0.alpha1)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
+
+GEM
+  remote: https://rubygems.org/
+  remote: https://rails-assets.org/
+  specs:
+    actionmailer (4.2.4)
+      actionpack (= 4.2.4)
+      actionview (= 4.2.4)
+      activejob (= 4.2.4)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+    actionpack (4.2.4)
+      actionview (= 4.2.4)
+      activesupport (= 4.2.4)
+      rack (~> 1.6)
+      rack-test (~> 0.6.2)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (4.2.4)
+      activesupport (= 4.2.4)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    activejob (4.2.4)
+      activesupport (= 4.2.4)
+      globalid (>= 0.3.0)
+    activemodel (4.2.4)
+      activesupport (= 4.2.4)
+      builder (~> 3.1)
+    activerecord (4.2.4)
+      activemodel (= 4.2.4)
+      activesupport (= 4.2.4)
+      arel (~> 6.0)
+    activesupport (4.2.4)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    addressable (2.3.8)
+    administrate (0.1.0)
+      autoprefixer-rails (~> 6.0)
+      datetime_picker_rails (~> 0.0.5)
+      inline_svg (~> 0.6)
+      kaminari (~> 0.16)
+      momentjs-rails (~> 2.8)
+      neat (~> 1.1)
+      normalize-rails (~> 3.0)
+      rails (~> 4.2)
+      sass (~> 3.4)
+      selectize-rails (~> 0.6)
+    arel (6.0.3)
+    autoprefixer-rails (6.1.0.1)
+      execjs
+      json
+    bcrypt (3.1.10)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+    bourbon (4.2.6)
+      sass (~> 3.4)
+      thor (~> 0.19)
+    builder (3.2.2)
+    byebug (8.0.0)
+    clipboard-rails (1.4.3)
+    coffee-rails (4.1.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1.1)
+    coinbase (4.0.9)
+    datetime_picker_rails (0.0.5)
+      momentjs-rails (>= 2.8.1)
+    debug_inspector (0.0.2)
+    devise (3.5.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    dwolla-ruby (2.6.9)
+      addressable (>= 2)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.7, >= 1.7.3)
+    erubis (2.7.0)
+    evernote-thrift (1.25.2)
+    execjs (2.6.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.4.0.0)
+      railties (>= 3.2, < 5.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
+    globalid (0.3.6)
+      activesupport (>= 4.1.0)
+    hashie (3.4.3)
+    i18n (0.7.0)
+    inflection (1.0.0)
+    inline_svg (0.6.1)
+      activesupport (>= 4.0.4)
+      loofah (>= 2.0)
+      nokogiri (~> 1.6)
+    jbuilder (2.3.2)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
+    jquery-rails (4.0.5)
+      rails-dom-testing (~> 1.0)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
+    json (1.8.3)
+    jwt (1.5.2)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.6.2)
+    mini_portile (0.6.2)
+    minitest (5.8.2)
+    momentjs-rails (2.10.6)
+      railties (>= 3.1)
+    multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
+    netrc (0.11.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    normalize-rails (3.0.3)
+    oauth (0.4.7)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-23andme (0.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-500px (1.0.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-amazon (1.0.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-angellist (1.0.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-appnet (0.1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-automatic (1.0.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-azure-oauth2 (0.0.5)
+      jwt (~> 1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-box2 (0.0.1)
+      omniauth (~> 1.0)
+    omniauth-buffer2 (0.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-clef (1.0.3)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-coinbase (2.1.0)
+      coinbase (~> 4.0)
+      multi_json (~> 1.3)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-concur (0.0.1)
+      omniauth-oauth
+    omniauth-constantcontact2 (1.0.6)
+      multi_json (~> 1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-dash (0.1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-deezer (0.3.0)
+      faraday
+      omniauth (>= 1.1.0)
+    omniauth-desk (0.1.6)
+      multi_json (>= 1.3.6)
+      omniauth (>= 1.0)
+      omniauth-oauth (>= 1.0)
+    omniauth-digitalocean (0.2.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-disqus (1.0.1)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-dropbox-oauth2 (0.2.0)
+      omniauth-oauth2
+    omniauth-dwolla (0.0.16)
+      dwolla-ruby (~> 2.5)
+      omniauth (~> 1.2)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-ebay (1.0)
+      activesupport
+      multi_xml
+      omniauth (~> 1.0)
+    omniauth-eventbrite (0.0.6)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-evernote (1.2.1)
+      evernote-thrift
+      multi_json (~> 1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-fitbit (1.0.5)
+      multi_xml
+      omniauth-oauth (~> 1.0)
+    omniauth-flattr (0.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-flickr (0.0.19)
+      multi_json (~> 1.11.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-foursquare (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-freshbooks (1.0.1)
+      multi_xml
+      omniauth-oauth
+    omniauth-genius (0.0.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-github (1.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-gitlab (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-google-oauth2 (0.2.10)
+      addressable (~> 2.3)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (~> 1.3.1)
+    omniauth-gumroad (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-heroku (0.2.0)
+      omniauth (~> 1.2)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-imgur (0.0.0)
+      omniauth (~> 1)
+      omniauth-oauth2 (~> 1)
+    omniauth-instagram (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-instapaper (0.2.0)
+      multi_json
+      omniauth-xauth (~> 0.0.2)
+    omniauth-jawbone (1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-jira (0.2.0)
+      multi_json (~> 1.3)
+      oauth
+      omniauth (~> 1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-lastfm (0.0.6)
+      omniauth-oauth (~> 1.0)
+      rest-client (>= 1.6.6, < 1.8)
+    omniauth-linkedin-oauth2 (0.1.5)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-mailchimp (1.0.3)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-meetup (0.0.7)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-netflix (0.3.0)
+      multi_json (~> 1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    omniauth-openid (1.0.1)
+      omniauth (~> 1.0)
+      rack-openid (~> 1.3.1)
+    omniauth-paymill (0.0.1)
+      omniauth-oauth2
+    omniauth-photobucket (0.0.5)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-quickbooks (0.0.2)
+      omniauth-oauth (~> 1.0)
+    omniauth-rdio-oauth2 (0.1.2)
+      omniauth-oauth2
+    omniauth-shopify-oauth2 (1.1.10)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-spotify (0.0.9)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-steam (1.0.3)
+      multi_json
+      omniauth-openid
+    omniauth-stripe-connect (2.9.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.3.1)
+    omniauth-trello (0.0.4)
+      multi_json (~> 1.5)
+      oauth (~> 0.4)
+      omniauth (~> 1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-tumblr (1.1)
+      omniauth-oauth (~> 1.0)
+    omniauth-twitch (0.1.2)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-twitter (1.2.1)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
+    omniauth-uber (1.0.1)
+      omniauth (~> 1.2)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-venmo (1.1.1)
+      omniauth (~> 1.2)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-vimeo (2.0.0)
+      omniauth-oauth2
+    omniauth-windowslive (0.0.9.1)
+      multi_json (>= 1.0.3)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-xauth (0.0.2)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-xero (1.0.1)
+      omniauth-oauth (~> 1.0)
+    omniauth-yahoo (0.0.7)
+      omniauth-oauth (~> 1.0)
+    omniauth-yammer (0.1.0)
+      omniauth-oauth2 (>= 1.1)
+    omniauth-zendesk (0.1.3)
+      omniauth (> 1.0)
+      zendesk_api (> 0.2.2)
+    omniauth_cobot (0.0.3)
+      omniauth-oauth2
+    orm_adapter (0.5.0)
+    pg (0.18.4)
+    rack (1.6.4)
+    rack-openid (1.3.1)
+      rack (>= 1.1.0)
+      ruby-openid (>= 2.1.8)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails (4.2.4)
+      actionmailer (= 4.2.4)
+      actionpack (= 4.2.4)
+      actionview (= 4.2.4)
+      activejob (= 4.2.4)
+      activemodel (= 4.2.4)
+      activerecord (= 4.2.4)
+      activesupport (= 4.2.4)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.2.4)
+      sprockets-rails
+    rails-assets-tether (1.1.1)
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.7)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.2)
+      loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
+    railties (4.2.4)
+      actionpack (= 4.2.4)
+      activesupport (= 4.2.4)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (10.4.2)
+    rdoc (4.2.0)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    ruby-openid (2.7.0)
+    sass (3.4.19)
+    sass-rails (5.0.4)
+      railties (>= 4.0.0, < 5.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    scrub_rb (1.0.1)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    select2-rails (4.0.0)
+      thor (~> 0.14)
+    selectize-rails (0.12.1)
+    sprockets (3.4.0)
+      rack (> 1, < 3)
+    sprockets-rails (2.3.3)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (>= 2.8, < 4.0)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tilt (2.0.1)
+    turbolinks (2.5.3)
+      coffee-rails
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
+    web-console (2.2.1)
+      activemodel (>= 4.0)
+      binding_of_caller (>= 0.7.2)
+      railties (>= 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+    zendesk_api (1.12.1)
+      faraday (~> 0.9)
+      hashie (>= 1.2, < 4.0, != 3.3.0)
+      inflection
+      mime-types
+      multipart-post (~> 2.0)
+      scrub_rb (~> 1.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  administrate (~> 0.1.0)
+  bootstrap!
+  byebug
+  clipboard-rails (~> 1.4.2)
+  coffee-rails (~> 4.1.0)
+  devise (~> 3.5.2)
+  font-awesome-rails (~> 4.4.0.0)
+  friendly_id (~> 5.1.0)
+  jbuilder (~> 2.0)
+  jquery-rails
+  jquery-turbolinks (~> 2.1.0)
+  omniauth (~> 1.2.2)
+  omniauth-23andme
+  omniauth-500px
+  omniauth-amazon
+  omniauth-angellist
+  omniauth-appnet
+  omniauth-automatic
+  omniauth-azure-oauth2
+  omniauth-bitly!
+  omniauth-box2
+  omniauth-buffer2
+  omniauth-clef
+  omniauth-coinbase
+  omniauth-concur
+  omniauth-constantcontact2
+  omniauth-dash
+  omniauth-deezer
+  omniauth-desk
+  omniauth-digitalocean
+  omniauth-disqus
+  omniauth-dribbble!
+  omniauth-dropbox-oauth2
+  omniauth-dwolla
+  omniauth-ebay
+  omniauth-eventbrite
+  omniauth-evernote
+  omniauth-facebook
+  omniauth-fitbit
+  omniauth-flattr
+  omniauth-flickr
+  omniauth-foursquare
+  omniauth-freshbooks
+  omniauth-genius
+  omniauth-github
+  omniauth-gitlab
+  omniauth-google-oauth2
+  omniauth-gumroad
+  omniauth-harvest!
+  omniauth-heroku
+  omniauth-imgur
+  omniauth-instagram
+  omniauth-instapaper
+  omniauth-jawbone
+  omniauth-jira
+  omniauth-lastfm
+  omniauth-linkedin-oauth2
+  omniauth-mailchimp
+  omniauth-meetup
+  omniauth-netflix
+  omniauth-oauth2 (~> 1.3, >= 1.3.1)
+  omniauth-paymill
+  omniauth-paypal!
+  omniauth-photobucket
+  omniauth-producthunt!
+  omniauth-quickbooks
+  omniauth-rdio-oauth2
+  omniauth-shopify-oauth2
+  omniauth-soundcloud!
+  omniauth-spotify
+  omniauth-steam
+  omniauth-stripe-connect
+  omniauth-trello
+  omniauth-tumblr
+  omniauth-twitch
+  omniauth-twitter
+  omniauth-uber
+  omniauth-venmo
+  omniauth-vimeo
+  omniauth-windowslive
+  omniauth-xero
+  omniauth-yahoo
+  omniauth-yammer
+  omniauth-zendesk
+  omniauth_cobot
+  pg
+  rails (= 4.2.4)
+  rails-assets-tether (>= 1.1.0)!
+  rails_12factor
+  sass-rails (~> 5.0)
+  sdoc (~> 0.4.0)
+  select2-rails (~> 4.0.0)
+  turbolinks
+  uglifier (>= 1.3.0)
+  web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6

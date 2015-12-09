@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require select2
+ *= require select2-bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+$font-family-sans-serif: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@import "bootstrap";
+@import "font-awesome";
+
+.navbar {
+  margin-bottom: 40px;
+}
+
+.project {
+  display: block;
+  font-size: 32px;
+  padding: 20px 40px;
+
+  small {
+    color: #888;
+    display: inline-block;
+    font-size: 0.6em;
+    line-height: 32px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: #f7f7f9;
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+.service {
+  > a {
+    border: 1px solid #eee;
+    color: #333;
+    display: block;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  img {
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+
+.token {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  position: relative;
+
+  .delete-link {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+
+  &:hover {
+    .delete-link {
+      display: block;
+    }
+  }
+
+  &:target {
+    .card {
+      background-color: rgb(248, 238, 199);
+    }
+  }
+}
+
+.service-logo {
+  float: left;
+  height: 76px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.service-logo-sm {
+  height: 24px;
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+}

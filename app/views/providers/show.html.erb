@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @provider.name %>
+</p>
+
+<p>
+  <strong>Omniauth name:</strong>
+  <%= @provider.omniauth_name %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @provider.github %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @provider.instructions %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>
