@@ -3,5 +3,8 @@
   "description": "An awesome API testing and management tool",
   "repository": "https://github.com/excid3/oauthable",
   "logo": "https://oauthable.com/assets/oauth_logo.png",
-  "keywords": ["ruby", "rails", "oauth", "omniauth", "api", "testing", "development"]
+  "keywords": ["ruby", "rails", "oauth", "omniauth", "api", "testing", "development"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+  }
 }
