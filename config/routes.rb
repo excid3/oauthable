@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   # This should probably be for moderators only
   authenticated :user do
     resources :providers
+    root to: "projects#index", as: :authenticated_root
   end
 
-  root to: "projects#index"
+  root to: "main#index"
 end

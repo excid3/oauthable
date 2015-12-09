@@ -102,6 +102,43 @@ $font-family-sans-serif: "proxima-nova", "Helvetica Neue", Helvetica, Arial, san
   height: 24px;
 }
 
+.homepage {
+  text-align: center;
+
+  section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+
+    h3 {
+      margin-bottom: 2rem;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .homepage-logo {
+    margin: 20px;
+  }
+}
+
 .nav-tabs {
   margin-bottom: 20px;
+}
+
+footer {
+  background-color: #f7f7f7;
+  color: #818a91;
+  font-size: 85%;
+  margin-top: 3rem;
+  padding: 3rem 0rem;
+
+  a {
+    font-weight: 700;
+    color: #55595c;
+  }
 }

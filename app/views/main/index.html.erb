@@ -1,0 +1,23 @@
+<div class="homepage">
+  <section>
+    <h1>OAuth doesn't have to be a pain</h1>
+    <p class="lead">Test, integrate, and develop with 70+ APIs using OAuth</p>
+    <p><%= link_to "Start Integrating OAuth", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </section>
+
+  <section>
+    <div class="container">
+      <h3>Services You Can Integrate With</h3>
+      <% PROVIDERS.each do |_, name, _, domain, _| %>
+        <%= link_to "http://#{domain}", target: :blank do %>
+          <img src="https://logo.clearbit.com/<%= domain %>?size=80" class="img-rounded homepage-logo" data-toggle="tooltip" data-placement="top" title="<%= name %>">
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+
+  <section>
+    <h3>It's easier than you think to use OAuth</h3>
+    <p><%= link_to "Start Integrating OAuth", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </section>
+</div>
