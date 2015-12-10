@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :services
 
+  validates :name, presence: true
   after_initialize :set_default_environment
 
   private
